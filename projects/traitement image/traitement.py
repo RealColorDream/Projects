@@ -53,7 +53,6 @@ def vrai_nb(img, seuil):
 
 
 def quadrillage(img):
-
     (width, height) = img.size
     for col in range(0, width,50):
         for ligne in range(0, height):
@@ -71,7 +70,6 @@ def quadrillage(img):
 
 
 def quadrillage2(img):
-
     (width, height) = img.size
     for col in range(0, width):
         if col%50 == 0:
@@ -98,7 +96,6 @@ reponse=int(input('Quelle est la fonction que vous voulez executer ? '))
 
 
 if reponse == 1:
-
     print("traitement en cours ...")
     duree_start = time.time()
     mystere(img)
@@ -108,7 +105,6 @@ if reponse == 1:
     print("appuyer sur ctrl + F9 pour lancer une autre fonction")
 
 if reponse == 2:
-
     print("traitement en cours ...")
     duree_start = time.time()
     vrai_nb(img , 40)
@@ -142,4 +138,3 @@ if reponse == 5:
     duree = time.time() - duree_start
     print("Durée du traitement : %s s" % duree)
     print("appuyer sur ctrl + F9 pour lancer une autre fonction")
-

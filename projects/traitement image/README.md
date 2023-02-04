@@ -1,0 +1,1 @@
+# This python project use the PIL lib to modify an image
