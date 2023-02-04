@@ -1,0 +1,32 @@
+html {
+    margin: 2px;
+    background-color: #1a1a1a;
+    background-image: url('bg.png');
+}
+body {
+    background-color: #1a1a1a;
+    background-image: url('bg.png');
+}
+h1 {
+    border: 2px dashed #88C8FF;
+    text-align : center;
+    color :  #88C8FF
+}
+div {
+    text-align: center;
+    
+}
+h2{
+    color : #88C8FF;
+}
+
+h3{
+    color : #88C8FF;
+}
+
+span{
+    color: #88C8FF;
+    text-align: center;
+    background-image: url('bg.png');
+
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Convertisseur de températures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Convertisseur de températures</h1>
+<div id="page">
+    <div id="saisie"><h2>Zone de saisie</h2>
+        <input type="text" id="entree" size="10">
+        <input type="button" id="bouton" value="Conversion">
+    </div>
+    <div id="resultats">
+        <h2>Zone de résultats / Historique de Conversion ( [ctrl+r] / [F5] pour effacer l'Historique )</h2>
+        <div class="conversion">
+            <span id="rep_K"></span>
+        </div>
+    </div>
+</div>
+<script>
+    function testunite (){
+    
+    }
+    
+    <!--crée une nouvelle balise h3 qui contient lentree -->
+    
+    function affiche_resultat(valeur) {
+    var nv_div = document.createElement("div");
+    var texte_unite = document.createElement("h3");
+    var texte_valeur = document.createElement("span");
+    nv_div.appendChild(texte_unite);
+    nv_div.appendChild(texte_valeur);
+    var div_pere = document.getElementById("resultats");
+    div_pere.appendChild(nv_div);
+    var str = entree.value;
+    var indexf1 = str.indexOf("°f");
+    var indexf2 = str.indexOf("°F");
+    var indexk1 = str.indexOf("°k");
+    var indexk2 = str.indexOf("°K");
+    var indexc1 = str.indexOf("°c");
+    var indexc2 = str.indexOf("°C");
+    var indexr1 = str.indexOf("°r");
+    var indexr2 = str.indexOf("°R");
+    
+    if (indexf1 > -1 ){
+        texte_unite.innerHTML = entree.value + " = ";
+        texte_valeur.innerHTML = conv_F2K(parseInt(entree.value.split("°f")));
+    }
+    
+    if (indexf2 > -1 ){
+        texte_unite.innerHTML = entree.value + " = ";
+        texte_valeur.innerHTML = conv_F2K(parseInt(entree.value.split("°F")));
+    }
+    
+
+
+
+
+
+
+    if (indexk1 > -1 ){
+        texte_unite.innerHTML = entree.value + " = ";
+        texte_valeur.innerHTML = conv_K2F(parseInt(entree.value.split("°c")))+" / " + conv_K2C(parseInt(entree.value.split("°c")))+" / " + conv_K2R(parseInt(entree.value.split("°c")));
+    }
+    if (indexk2 > -1 ){
+        texte_unite.innerHTML = entree.value + " = ";
+        texte_valeur.innerHTML = conv_K2F(parseInt(entree.value.split("°c")))+" / " +conv_K2C(parseInt(entree.value.split("°c")))+" / " + conv_K2R(parseInt(entree.value.split("°c")));
+    }
+
+
+
+
+
+
+
+    if (indexc1 > -1 ){
+        texte_unite.innerHTML = entree.value + " = ";
+        texte_valeur.innerHTML = conv_C2K(parseInt(entree.value.split("°c")));
+    }
+    if (indexc2 > -1 ){
+        texte_unite.innerHTML = entree.value + " = ";
+        texte_valeur.innerHTML = conv_C2K(parseInt(entree.value.split("°C")));
+    }
+    
+    if (indexr1 > -1 ){
+        texte_unite.innerHTML = entree.value + " = ";
+        texte_valeur.innerHTML = conv_R2K(parseInt(entree.value.split("°r")));
+    }
+    if (indexr2 > -1 ){
+        texte_unite.innerHTML = entree.value + " = ";
+        texte_valeur.innerHTML = conv_R2K(parseInt(entree.value.split("°R")));
+    }
+
+
+    
+    }
+
+    <!-- fonction bouton -->
+    function click_bouton() {
+    document.getElementById('entree');
+    document.getElementById('entree');
+    saisie = document.getElementById('entree');
+    saisie.value;
+    affiche_resultat(entree.value);
+    
+}
+
+
+
+    bouton = document.getElementById('bouton');
+    bouton.addEventListener("click",click_bouton);
+    
+
+    <!--fonction de conversion-->
+
+    function conv_K2C(valeur){ 
+    return valeur-273.15+ " °C";
+    }
+    function conv_C2K(valeur){
+    return valeur+273.15+ " °K";
+    }
+    function conv_K2F(valeur){
+    valeur = valeur - 273.15;
+    return valeur* 9/5 + 32 + " °F"
+    }
+    function conv_F2K(valeur){
+    valeur = valeur - 32;
+    return valeur * 5/9 + 273.15 + " °K"
+    }
+    function conv_R2K(valeur){
+    return valeur *5/9 + "°K"
+    }
+    function conv_K2R(valeur){
+    return valeur *1.8 + "°R"
+    }
+</script>
+
+</body>
+</html>
