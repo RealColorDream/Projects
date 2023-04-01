@@ -191,7 +191,6 @@ def alignement_diagonale(grille):
 ##            bol = False
 ##    return bol
 
-
     bol = False
     for x in range(3):
         for y in range(4):
